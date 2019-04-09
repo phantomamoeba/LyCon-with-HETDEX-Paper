@@ -1,0 +1,244 @@
+%%
+%% Beginning of file 'main.tex'
+%%
+%% using aastex version 6.2
+\documentclass{aastex62}
+
+\newcommand{\vdag}{(v)^\dagger}
+\newcommand\aastex{AAS\TeX}
+\newcommand\latex{La\TeX}
+
+\usepackage{float}
+
+%% Tells LaTeX to search for image files in the 
+%% current directory as well as in the figures/ folder.
+\graphicspath{{./}{figures/}}
+
+%% Reintroduced the \received and \accepted commands from AASTeX v5.2
+%\received{January 1, 2018}
+%\revised{January 7, 2018}
+%\accepted{\today}
+%% Command to document which AAS Journal the manuscript was submitted to.
+%% Adds "Submitted to " the arguement.
+%\submitjournal{ApJ}
+
+%% Mark up commands to limit the number of authors on the front page.
+%% Note that in AASTeX v6.2 a \collaboration call (see below) counts as
+%% an author in this case.
+%
+%\AuthorCollaborationLimit=3
+%
+%% Will only show Schwarz, Muench and "the AAS Journals Data Scientist 
+%% collaboration" on the front page of this example manuscript.
+%%
+%% Note that all of the author will be shown in the published article.
+%% This feature is meant to be used prior to acceptance to make the
+%% front end of a long author article more manageable. Please do not use
+%% this functionality for manuscripts with less than 20 authors. Conversely,
+%% please do use this when the number of authors exceeds 40.
+%%
+%% Use \allauthors at the manuscript end to show the full author list.
+%% This command should only be used with \AuthorCollaborationLimit is used.
+
+%% The following command can be used to set the latex table counters.  It
+%% is needed in this document because it uses a mix of latex tabular and
+%% AASTeX deluxetables.  In general it should not be needed.
+%\setcounter{table}{1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% The following section outlines numerous optional output that
+%% can be displayed in the front matter or as running meta-data.
+%%
+%% If you wish, you may supply running head information, although
+%% this information may be modified by the editorial offices.
+\shorttitle{Lyman Continuum Detection with HETDEX}
+\shortauthors{Dustin Davis}
+%%
+%% You can add a light gray and diagonal water-mark to the first page 
+%% with this command:
+% \watermark{text}
+%% where "text", e.g. DRAFT, is the text to appear.  If the text is 
+%% long you can control the water-mark size with:
+%  \setwatermarkfontsize{dimension}
+%% where dimension is any recognized LaTeX dimension, e.g. pt, in, etc.
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% This is the end of the preamble.  Indicate the beginning of the
+%% manuscript itself with \begin{document}.
+
+\begin{document}
+
+\title{Dustin Davis Second Year Project: Lyman Continuum Detection with HETDEX Data Release 1}
+
+%% LaTeX will automatically break titles if they run longer than
+%% one line. However, you may use \\ to force a line break if
+%% you desire. In v6.2 you can include a footnote in the title.
+
+%% A significant change from earlier AASTEX versions is in the structure for 
+%% calling author and affilations. The change was necessary to implement 
+%% autoindexing of affilations which prior was a manual process that could 
+%% easily be tedious in large author manuscripts.
+%%
+%% The \author command is the same as before except it now takes an optional
+%% arguement which is the 16 digit ORCID. The syntax is:
+%% \author[xxxx-xxxx-xxxx-xxxx]{Author Name}
+%%
+%% This will hyperlink the author name to the author's ORCID page. Note that
+%% during compilation, LaTeX will do some limited checking of the format of
+%% the ID to make sure it is valid.
+%%
+%% Use \affiliation for affiliation information. The old \affil is now aliased
+%% to \affiliation. AASTeX v6.2 will automatically index these in the header.
+%% When a duplicate is found its index will be the same as its previous entry.
+%%
+%% Note that \altaffilmark and \altaffiltext have been removed and thus 
+%% can not be used to document secondary affiliations. If they are used latex
+%% will issue a specific error message and quit. Please use multiple 
+%% \affiliation calls for to document more than one affiliation.
+%%
+%% The new \altaffiliation can be used to indicate some secondary information
+%% such as fellowships. This command produces a non-numeric footnote that is
+%% set away from the numeric \affiliation footnotes.  NOTE that if an
+%% \altaffiliation command is used it must come BEFORE the \affiliation call,
+%% right after the \author command, in order to place the footnotes in
+%% the proper location.
+%%
+%% Use \email to set provide email addresses. Each \email will appear on its
+%% own line so you can put multiple email address in one \email call. A new
+%% \correspondingauthor command is available in V6.2 to identify the
+%% corresponding author of the manuscript. It is the author's responsibility
+%% to make sure this name is also in the author list.
+%%
+%% While authors can be grouped inside the same \author and \affiliation
+%% commands it is better to have a single author for each. This allows for
+%% one to exploit all the new benefits and should make book-keeping easier.
+%%
+%% If done correctly the peer review system will be able to
+%% automatically put the author and affiliation information from the manuscript
+%% and save the corresponding author the trouble of entering it by hand.
+
+
+\email{dustin.davis@utexas.edu}
+
+\author[0000-0002-8925-9769]{Dustin Davis}
+\affil{University of Texas at Austin \\
+TBD Addr \\
+Austin, TX}
+
+
+\begin{abstract}
+
+Abstract TDB
+
+\end{abstract}
+
+%% Keywords should appear after the \end{abstract} command. 
+%% See the online documentation for the full list of available subject
+%% keywords and the rules for their use.
+\keywords{Lyman Continuum, HETDEX}
+
+
+
+\section{Introduction} \label{sec:intro}
+
+TBD Intro
+
+\section{Observations} \label{sec:obs}
+
+TBD basics on observations (dates, sky regions, num fibers, etc)
+
+\section{Data Reduction} \label{sec:reduction}
+
+TBD basic data reduction ... reference instead a HETDEX paper?
+
+
+\section{Data Selection} \label{sec:selection}
+
+TBD criteria imposed on selected observations and why. End with final observation/fiber counts.
+
+As described early, it is absolutely critical that the data sample is free of mis-identifications and (especially insidious) faint continuum interlopers along the line of sight. Strict selection criteria were applied (described below), but, because the more automated classification processes are still being developed each potential detection was manually inspected before being included or rejected from the data set. As such, the selection criteria were set not only to isolate a clean sample, but also to keep the number of detections manageable for the bottleneck of manual examination. Certainly most valid LAEs were left "on the table" due to these highly limiting (but necessary) restrictions. 
+
+The initial sample selection sought to eliminate obvious contaminants, spurious detections, and undesirable LAEs (specifically, AGN).
+
+todo: go through each selection and provide pre/post selection counts and justification for the value used
+
+\subsection{Initial Selection Criteria}
+The first step in reducing the potential LAE candidates from the set of all candidate detections in HDR1 was a simple threshold filter over several criteria. 
+
+\subsubsection{Initial Selection Criteria: Signal to Noise Ratio}
+
+\subsubsection{Initial Selection Criteria: Emission Wavelength}
+
+\subsubsection{Initial Selection Criteria: $\chi ^{2}$ Model Fit}
+
+\subsubsection{Initial Selection Criteria: Continuum Level}
+
+\subsubsection{Initial Selection Criteria: Emission Line Width}
+
+\subsubsection{Initial Selection Criteria: Emission Line Flux}
+
+\subsection{Neighborhood}
+In an effort to eliminate source confusion and the inclusion of light from other (bright and/or spatially extended) sources, we next examined the (on-sky) projected neighborhood around each target and reject any detections that have one or more 'bad neighbors'. Here, we used existing overlapped photometric catalogs and a sliding scale of apparent magnitudes vs angular separation from our candidate target. Any candidate target with at least one other nearby source of fainter magnitude and closer proximity than listed in the following table was removed from consideration. Overlap with photometric catalogs is incomplete (but will improve with future data releases) and the catalog selection/detection methods are not uniform, so the utility is somewhat limited. Even so, { \color{red} todo: how many removed by this cut ...}
+
+\begin{table}[H]
+\begin{tabular}{cccccccc}
+\textbf{\begin{tabular}[c]{@{}c@{}}Apparent\\ magnitude\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Separation\\  (")\end{tabular}} &  & \textbf{\begin{tabular}[c]{@{}c@{}}Apparent\\ magnitude\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Separation\\ (")\end{tabular}} &  & \textbf{\begin{tabular}[c]{@{}c@{}}Apparent\\ magnitude\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Separation\\ (")\end{tabular}} \\
+28 & 3.0 &  & 19 & 30.0 &  & 10 & 90.0 \\
+27 & 3.0 &  & 18 & 35.0 &  & 9 & 100.0 \\
+26 & 5.0 &  & 17 & 40.0 &  & 8 & 120.0 \\
+25 & 6.0 &  & 16 & 45.0 &  & 7 & 150.0 \\
+24 & 7.5 &  & 15 & 50.0 &  & 6 & 180.0 \\
+23 & 10.0 &  & 14 & 55.0 &  & 5 & 210.0 \\
+22 & 15.0 &  & 13 & 60.0 &  & 4 & 240.0 \\
+21 & 20.0 &  & 12 & 70.0 &  & 3 & 270.0 \\
+20 & 25.0 &  & 11 & 80.0 &  & 3 \textless{} & 300.0
+\end{tabular}
+\caption{Bad Neighbor Conditions}
+\label{my-label}
+\end{table}
+
+\subsection{Sky Fibers}
+In order to assert a positive detection above sky noise, it was necessary to identify and average over a large number of "blank" sky fibers. The initial sample of sky fibers was taken as the set of all fibers that shared a VIRUS Amplifier (for the same exposure) with one or more of the fibers included in a detection. That sample was then reduced to include only those fibers that did not exhibit obvious continuum or emission by removing from the set any fiber with one or more 2$\AA$ wide bins with flux exceeding $3.0\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ or one or more 500$\AA$ wide bins with mean flux outside $\pm 1.0 \times 10^{-17} erg\ s^{-1}\ cm^{-2}$.  
+
+\subsection{Edge Fibers}
+If too much of a detections light falls off the edge of an IFU, it becomes difficult or impossible to correctly model the astrometric solution and obtain a proper determination of the flux (accounting for lost light, etc). Without an accurate position, we cannot match the detection to the correct counterpart in a photometric catalog and without a correct spectra we cannot apply the various selection criteria or make a justifiably accurate classification. While it may be possible to correct these issues depending on how much light and position information is lost, for the limited purpose and scope of this paper, any detection whose most central (highest weighted) lay on the edge of its IFU was removed from consideration.
+
+
+\section{Analysis and Results} \label{sec:analysis}
+
+TBD description of analysis (shifting, stacking, etc) use of biweight vs mean vs median
+
+\section{Discussion} \label{sec:discussion}
+TBD brief discussion and future todos
+
+Potential contamination  not withstanding, noise is the main limiting factor in our Lyman Continuum measurement. Future enhancements to the HETDEX pipeline should help address this issue by providing more readied access to larger LAE samples with both improved SNR and a lower viable SNR limit.
+
+Todo: sky subtraction, machine learning, Bayesian ratio thresholds, additional imagaing catalogs with uniform magnitude corrections, 
+
+%% If you wish to include an acknowledgments section in your paper,
+%% separate it off from the body of the text using the \acknowledgments
+%% command.
+\acknowledgments
+
+TBD acknowledgements
+
+
+\begin{thebibliography}{}
+
+
+\end{thebibliography}
+
+%% This command is needed to show the entire author+affilation list when
+%% the collaboration and author truncation commands are used.  It has to
+%% go at the end of the manuscript.
+%\allauthors
+
+%% Include this line if you are using the \added, \replaced, \deleted
+%% commands to see a summary list of all changes at the end of the article.
+%\listofchanges
+
+\end{document}
+
+% End of file `sample62.tex'.
