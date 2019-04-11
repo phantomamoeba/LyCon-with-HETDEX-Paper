@@ -143,7 +143,23 @@ Abstract TDB
 
 \section{Introduction} \label{sec:intro}
 
-TBD Intro
+By approximately 400,000 years into its life, the universe had expanded (and cooled) sufficiently to allow the naked protons created in the Big Bang to capture electrons and form neutral atoms (mostly hydrogen). As the universe continued to expand and cool, clumps of gas began to accumulate in dark matter halos, eventually giving birth to the first (Population I) stars (z $\sim$ 20-30) and later still the first galaxies (z $\sim$ 10) \cite{Bromm}. High energy photons, generally from massive main sequence stars, supernovae, and quasars, began filling the universe and, as they encountered neutral atoms, stripped away their electrons, (re)ionizing them. By z $\sim$ 7, the IGM is almost fully ionized (though there remain scattered clouds of neutral gas) \cite{Stark}.\\
+
+While it is clear that reionization requires copious numbers of ionizing photons, and those photons are produced by O and B stars, supernovae, and quasars it is unclear to what degree each of these mechanisms contribute such photons to the IGM. Quasars are fantastically bright (across the electromagnetic spectrum) and they are certainly active during reionization, but they are likely too few in number to dominate the ionizing photon budget \cite{Bromm}. Supernovae too are extremely bright, but while more numerous than quasars, are extremely transient and, though they may turn out to aid in the escape of UV photons from the galaxies, they cannot be a principle contributor to reionization. So, unless we turn to more speculative physics (self-interacting dark matter, cosmic strings, mini-quasars, etc), we are left with O/B stars as the primary driver of reionization, but there is a problem.\\
+
+Certainly, star forming galaxies internally produce more than enough ionizing photons to fully account for IGM reionization, but, to succinctly state the problem, \textbf{the fraction of UV photons that (on average) escape the host galaxies ($f^{UV}_{esc}$ or just $f_{esc}$ hereafter) into the IGM is extremely model dependent and effectively unconstrained}. The predicted escape fraction depends (sometimes very sensitively) on a myriad of parameters (some poorly constrained) including the host galaxy's mass, dust content (and related mean metallicity), and neutral hydrogen column density and covering fraction. These individual predictions vary wildly from well less than 1\% to nearly 100\% \cite{Zackrisson} though the mean is probably on the lower end. For galaxies, essentially alone, to reionize the universe by z $\sim$ 7, most of the photons would have to come from smaller, fainter galaxies and the faint-end slope of the luminosity function would need to continue down to $M_{UV} \approx -13$ with $f_{esc} \approx 0.13 - 0.20$. If the faint-end slope flattens before then, $f_{esc}$ would need to be greater. Current observations reveal no turn-over down to $M_{UV} \approx -17$ with limited statistics suggesting the slope \textit{might} continue to steepen down to $M_{UV} \approx -14$ \cite{Livermore}. What ever the case, we must combine this with knowledge of the UV escape fraction if we are to have any real hope of understanding the mechanisms of reionization.\\
+
+Ideally, we would resolve this issue by directly measuring $f_{esc}$, but as we push to higher redshifts, photons with wavelengths shorter than Ly$\alpha$ (1216$\AA$) and especially the hard ionizing photons we wish to measure (short-ward of the Lyman Limit (912 $\AA$)) are seriously attenuated by clouds of neutral hydrogen along our line of sight such that, in the most optimistic case, by z=4 (well short of our target of $7 < z < 9$) the signal is gone. Though it would be impossible to directly measure $f_{esc}$, all hope is not lost if it is possible to accurately estimate $f_{esc}$ from other measurements that can actually be made.\\
+
+
+
+{ \color{red} todo: Make a brief case for z 3-3.5 as better proxies for z 7-10 galaxies than z=0 dwarfs, etc}\\
+
+{ \color{red} todo: Brief description of HETDEX, etc (maybe needs to be in another section?}\\
+
+{ \color{red} todo:  In this paper, we take early steps in (1) detecting EUV photons in ensembles of high z (3-3.5) LAE galaxies by building a large, exceptionally clean sample set from the HETDEX Data Release 1. Future papers will subselect from this data set and combine with archival photometry to explore correlations between directly and indirectly measurable properties (z, LyA EW, SiII absorption fetures, SED fit SFR, etc) and aggregate LyContinuum levels.}
+
+{ \color{red} todo: define LyC as 880-910 like Steidel}
 
 \section{Observations} \label{sec:obs}
 
@@ -153,6 +169,7 @@ TBD basics on observations (dates, sky regions, num fibers, etc)
 
 TBD basic data reduction ... reference instead a HETDEX paper?
 
+{ \color{red} todo: Section or Subsection on key ELiXer features (PLAE/POII, catalog integration, aperture magnitudes) ?}
 
 \section{Data Selection} \label{sec:selection}
 
@@ -164,56 +181,49 @@ The initial sample selection sought to eliminate obvious contaminants, spurious 
 
 todo: go through each selection and provide pre/post selection counts and justification for the value used
 
-\subsection{Initial Selection Criteria}
 The first step in reducing the potential LAE candidates from the set of all candidate detections in HDR1 was a simple threshold filter over several criteria. 
 
-\subsubsection{Initial Selection Criteria: Signal to Noise Ratio}
+\subsection{Emission Wavelength}
+Perhaps the easiest selection criteria to impose was the emission wavelength cut. Since we were interested in Lyman Continuum (880-910$\AA$) and the HETDEX observable wavelength range is 3470-5520 $\AA$, the minimum observed emission line wavelength was selected as 4860 $\AA$ (or z $\approx$ 3 for Ly$\alpha$) so that the blue end of our targeted Lyman Continuum range will be captured by the VIRUS spectrographs.
 
-\subsubsection{Initial Selection Criteria: Emission Wavelength}
+\subsection{Signal to Noise Ratio}
+{ \color{red} todo: our definitions of SNR and why 6.5 was seleced }
 
-\subsubsection{Initial Selection Criteria: $\chi ^{2}$ Model Fit}
+\subsection{$\chi ^{2}$ Model Fit}
 
-\subsubsection{Initial Selection Criteria: Continuum Level}
+\subsection{Continuum Level}
 
-\subsubsection{Initial Selection Criteria: Emission Line Width}
+\subsection{Emission Line Width}
 
-\subsubsection{Initial Selection Criteria: Emission Line Flux}
+\subsection{Emission Line Flux}
+
+\subsection{Photometric Imaging}
+
 
 \subsection{Neighborhood}
-In an effort to eliminate source confusion and the inclusion of light from other (bright and/or spatially extended) sources, we next examined the (on-sky) projected neighborhood around each target and reject any detections that have one or more 'bad neighbors'. Here, we used existing overlapped photometric catalogs and a sliding scale of apparent magnitudes vs angular separation from our candidate target. Any candidate target with at least one other nearby source of fainter magnitude and closer proximity than listed in the following table was removed from consideration. Overlap with photometric catalogs is incomplete (but will improve with future data releases) and the catalog selection/detection methods are not uniform, so the utility is somewhat limited. Even so, { \color{red} todo: how many removed by this cut ...}
+In an effort to eliminate source confusion and the inclusion of light from other (bright and/or spatially extended) sources, we next examined the (on-sky) projected neighborhood around each target and reject any detections that have one or more 'bad neighbors'. We first eliminated any detection with a neighboring source brighter than 26th magnitude within 5", then reduce the magnitude and the separations, rejecting detections with neighbors fainter than 26 inside 4", fainter than 27 inside 3" and fainter than 28 inside 2". 
 
-\begin{table}[H]
-\begin{tabular}{cccccccc}
-\textbf{\begin{tabular}[c]{@{}c@{}}Apparent\\ magnitude\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Separation\\  (")\end{tabular}} &  & \textbf{\begin{tabular}[c]{@{}c@{}}Apparent\\ magnitude\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Separation\\ (")\end{tabular}} &  & \textbf{\begin{tabular}[c]{@{}c@{}}Apparent\\ magnitude\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Separation\\ (")\end{tabular}} \\
-28 & 3.0 &  & 19 & 30.0 &  & 10 & 90.0 \\
-27 & 3.0 &  & 18 & 35.0 &  & 9 & 100.0 \\
-26 & 5.0 &  & 17 & 40.0 &  & 8 & 120.0 \\
-25 & 6.0 &  & 16 & 45.0 &  & 7 & 150.0 \\
-24 & 7.5 &  & 15 & 50.0 &  & 6 & 180.0 \\
-23 & 10.0 &  & 14 & 55.0 &  & 5 & 210.0 \\
-22 & 15.0 &  & 13 & 60.0 &  & 4 & 240.0 \\
-21 & 20.0 &  & 12 & 70.0 &  & 3 & 270.0 \\
-20 & 25.0 &  & 11 & 80.0 &  & 3 \textless{} & 300.0
-\end{tabular}
-\caption{Bad Neighbor Conditions}
-\label{my-label}
-\end{table}
+Lastly, the remaining set of detections were each manually examined, checking extended photometric cutout regions (out to 30" in radius) to remove any detections that were potentially in the halo or outer regions of a spatially extended source (see the Manual Examination Subsection)
+
 
 \subsection{Sky Fibers}
-In order to assert a positive detection above sky noise, it was necessary to identify and average over a large number of "blank" sky fibers. The initial sample of sky fibers was taken as the set of all fibers that shared a VIRUS Amplifier (for the same exposure) with one or more of the fibers included in a detection. That sample was then reduced to include only those fibers that did not exhibit obvious continuum or emission by removing from the set any fiber with one or more 2$\AA$ wide bins with flux exceeding $3.0\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ or one or more 500$\AA$ wide bins with mean flux outside $\pm 1.0 \times 10^{-17} erg\ s^{-1}\ cm^{-2}$.  
-
+In order to assert a positive detection above sky noise, it was necessary to identify and average over a large number of "blank" sky fibers. The initial sample of sky fibers was taken as the set of all fibers that shared a VIRUS Amplifier (for the same exposure) with one or more of the fibers included in a detection. That sample was then reduced to include only those fibers that did not exhibit obvious continuum or emission by removing from the set any fiber with one or more 2$\AA$ wide bins with flux exceeding $3.0\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ or one or more 500$\AA$ wide bins with mean flux outside $\pm 1.0 \times 10^{-17} erg\ s^{-1}\ cm^{-2}$.    { \color{red} todo: how many total sky fibers included, (less useful) what fraction were removed?}
+ 
 \subsection{Edge Fibers}
-If too much of a detections light falls off the edge of an IFU, it becomes difficult or impossible to correctly model the astrometric solution and obtain a proper determination of the flux (accounting for lost light, etc). Without an accurate position, we cannot match the detection to the correct counterpart in a photometric catalog and without a correct spectra we cannot apply the various selection criteria or make a justifiably accurate classification. While it may be possible to correct these issues depending on how much light and position information is lost, for the limited purpose and scope of this paper, any detection whose most central (highest weighted) lay on the edge of its IFU was removed from consideration.
+If too much of a detections light falls off the edge of an IFU, it becomes difficult or impossible to correctly model the astrometric solution and obtain a proper determination of the flux (accounting for lost light, etc). Of particular issue for this work is the loss of shorter-wavelength light due to DAR (which would fall off the edge of the detector). Without an accurate position, we cannot match the detection to the correct counterpart in a photometric catalog and without a correct spectra we cannot apply the various selection criteria or make a justifiably accurate classification. While it may be possible to correct these issues for specific observations depending on the orientation of the instrument and how much light and position information is lost, for the limited purpose and scope of this paper, any detection whose most central (highest weighted) lay on the edge of its IFU was removed from consideration.  { \color{red} todo: detections removed or fraction of detections removed}
+
+\subsection{Manual Examination}
+The final step in vetting the sample was a manual examination of the ELiXer detection report in which the 2D fiber cutouts, pixel flats, CCD region, 1D spectra fit, full 1D spectra and photometric images were reviewed for any disqualifying conditions.
 
 
 \section{Analysis and Results} \label{sec:analysis}
 
 TBD description of analysis (shifting, stacking, etc) use of biweight vs mean vs median
 
-\section{Discussion} \label{sec:discussion}
+\section{Discussion and Future Work} \label{sec:discussion}
 TBD brief discussion and future todos
 
-Potential contamination  not withstanding, noise is the main limiting factor in our Lyman Continuum measurement. Future enhancements to the HETDEX pipeline should help address this issue by providing more readied access to larger LAE samples with both improved SNR and a lower viable SNR limit.
+Potential contamination excluded (misidentification of emission line and faint continuum LOS interlopers), noise is the main limiting factor in our Lyman Continuum measurement. Future enhancements to the HETDEX pipeline should help address this issue by providing more readied access to larger LAE samples with both improved SNR and a lower viable SNR limit.
 
 Todo: sky subtraction, machine learning, Bayesian ratio thresholds, additional imagaing catalogs with uniform magnitude corrections, 
 
@@ -226,7 +236,32 @@ TBD acknowledgements
 
 
 \begin{thebibliography}{}
+\bibitem[Bromm and Yoshida (2011)]{Bromm}
+Bromm, V. and Yoshida, N. "The First Galaxies", arXiv:1102.4638v1 (2011)
 
+\bibitem[Chisholm et al (2018)]{Chisholm}
+Chisholm J., et al "Accurately predicting the escape fraction of ionizing photons using rest-frame ultraviolet absorption lines", arXiv:1803.03655v2 (2018)
+
+\bibitem[Duncan and Conselice (2015)]{Duncan}
+Duncan, K. and Conselice, C. "Powering reionization: assessing the galaxy ionizing photon budget at z $<$ 10", arXiv:1505.01846v1 (2015)
+
+\bibitem[Gazagnes et al (2018)]{Gazagnes}
+Gazagnes, S. et al "Neutral gas properties of Lyman continuum emitting galaxies: Column densities and covering fractions from UV absorption lines", arXiv:1802.06378v2 (2018)
+
+\bibitem[Livermore and Finkelstein (2018)]{Livermore}
+Livermore, R.C. and Finkelstein, S.L. "Directly Observing the Galaxies Likely Responsible for Reionization" arXiv:1604.06799v2 (2018)
+
+\bibitem[Stark (2016)]{Stark}
+Stark, D., "Galaxies in the First Billion Years After the Big Bang", Annu. Rev. Astron. Astrophys. 2016.54:761-803
+
+\bibitem[Tsang (2017)]{Tsang}
+Tsang, B. "Supernovae Made Way for Cosmic Reionization", Astrobites May 29, 2017
+
+\bibitem[Yue et al (2018)]{Yue}
+Yue, B. et al "On the Faint-End of the Galaxy Luminosity Function in the Epoch of Reionization: Updated Constraints from the HST Frontier Fields", arXiv:1711.05130v4 (2018)
+
+\bibitem[Zackrisson et al (2017)]{Zackrisson}
+Zackrisson, E., et al "The Spectral Evolution of the First Galaxies. III. Simulated James Webb Space Telescope Spectra of Reionization-Epoch Galaxies with Lyman Continuum Leakage", arXiv:1608.08217v2 (2017)
 
 \end{thebibliography}
 
