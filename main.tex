@@ -151,7 +151,7 @@ Certainly, star forming galaxies internally produce more than enough ionizing ph
 
 Ideally, we would resolve this issue by directly measuring $f_{esc}$, but as we push to higher redshifts, photons with wavelengths shorter than Ly$\alpha$ (1216$\AA$) and especially the hard ionizing photons we wish to measure (short-ward of the Lyman Limit (912 $\AA$)) are seriously attenuated by clouds of neutral hydrogen along our line of sight such that, in the most optimistic case, by z=4 (well short of our target of $7 < z < 9$) the signal is gone. Though it would be impossible to directly measure $f_{esc}$, all hope is not lost if it is possible to accurately estimate $f_{esc}$ from other measurements that can actually be made.\\
 
-
+{ \color{red} todo: competing theory as to what reionized universe ... big galaxies (but takes time, to build, so start slow and ramp up quickly) or small galaxies ... many more but with few stars but better escape fraction). If we can constrain the escape fraction we could support or eliminate one or other option ... cite Finkelstein 2019}\\
 
 { \color{red} todo: Make a brief case for z 3-3.5 as better proxies for z 7-10 galaxies than z=0 dwarfs, etc}\\
 
@@ -171,44 +171,65 @@ TBD basic data reduction ... reference instead a HETDEX paper?
 
 { \color{red} todo: Section or Subsection on key ELiXer features (PLAE/POII, catalog integration, aperture magnitudes) ?}
 
+\subsection{Emission Line eXplorer} \label{sec:elixer}
+{ \color{red} todo: maybe should be a subsection under Data Reduction? Hit the key points of ELiXer ... visual overview, imaging integration, PLAE/POII (cite Leung 2017) and source of the continuum estimates .... note the non-uniformity of the photometry and ELiXer's aperture magnitude }
+
+
 \section{Data Selection} \label{sec:selection}
 
-TBD criteria imposed on selected observations and why. End with final observation/fiber counts.
+As it is absolutely critical that the data sample is free of mis-identifications and (especially insidious) faint continuum interlopers along the line of sight. Strict selection criteria were applied (described below in the order of application), and, because the more automated classification processes were not yet available, each potential detection was manually inspected before being included in the data set. As such, the selection criteria were set not only to isolate a clean sample, but also to keep the number of detections manageable for the bottleneck of manual examination. As the full HDR1 emission line catalog contains 690,868 detections (approximately 1/2 spurious and 1/4 not Ly$\alpha$) and the sample for this work was reduced to 271, certainly most valid LAEs were left "on the table" due to these highly limiting (but necessary) restrictions. 
 
-As described early, it is absolutely critical that the data sample is free of mis-identifications and (especially insidious) faint continuum interlopers along the line of sight. Strict selection criteria were applied (described below), but, because the more automated classification processes are still being developed each potential detection was manually inspected before being included or rejected from the data set. As such, the selection criteria were set not only to isolate a clean sample, but also to keep the number of detections manageable for the bottleneck of manual examination. Certainly most valid LAEs were left "on the table" due to these highly limiting (but necessary) restrictions. 
-
-The initial sample selection sought to eliminate obvious contaminants, spurious detections, and undesirable LAEs (specifically, AGN).
+The initial sample selection sought to eliminate obvious contaminants, spurious detections, and undesirable LAEs (specifically AGN with obvious continuum).
 
 todo: go through each selection and provide pre/post selection counts and justification for the value used
 
 The first step in reducing the potential LAE candidates from the set of all candidate detections in HDR1 was a simple threshold filter over several criteria. 
 
 \subsection{Emission Wavelength}
-Perhaps the easiest selection criteria to impose was the emission wavelength cut. Since we were interested in Lyman Continuum (880-910$\AA$) and the HETDEX observable wavelength range is 3470-5520 $\AA$, the minimum observed emission line wavelength was selected as 4860 $\AA$ (or z $\approx$ 3 for Ly$\alpha$) so that the blue end of our targeted Lyman Continuum range will be captured by the VIRUS spectrographs allowing for some small variation in each detector's wavelength range and avoid the edgemost pixels.
+Perhaps the easiest selection criteria to impose was the emission wavelength cut. Since we were interested in Lyman Continuum (880-910$\AA$) and the HETDEX observable wavelength range is 3470-5520 $\AA$, the minimum observed emission line wavelength was selected as 4860 $\AA$ (or z $\approx$ 3 for Ly$\alpha$) so that the blue end of our targeted Lyman Continuum range will be captured by the VIRUS spectrographs allowing for some small variation in each detector's wavelength range and avoid the edgemost pixels. This cut eliminated 75\% of all detections.
 
 \subsection{Signal to Noise Ratio}
-{ \color{red} todo: our definitions of SNR and why 6.5 was seleced }
+Although there is good recovery down to a SNR of approximately 5.2  { \color{red} todo: cite future? HETDEX paper of junk vs good recovery in Chenxu/Erin simulations}, in an effort to keep this preliminary manual examination sample manageable, a SNR minimum threshold of 6.5 was enforced. This reduced the sample size by another 61\%.
 
-\subsection{$\chi ^{2}$ Model Fit}
+\subsection{$\chi^{2}$ Model Fit}
+Closely related to the SNR cut, the $\chi^{2}$ limit of 2.0 was imposed to remove most detections of dubious quality, keeping only those detections with essentially single Gaussian line profiles within 50 $\AA$ of the line center.  { \color{red} todo: confirm the 50 AA ... might have been 40?} { \color{red} todo: also cite future? HETDEX paper of junk vs good recovery in Chenxu/Erin simulations}. This removed an additional 34\% of detections.
 
 \subsection{Continuum Level}
-{ \color{red} todo: limit continuum to reduce selection of AGN}
+As a likely indicator that the host is not an LAE (excepting quasars and other AGN), any detections with strong continuum observed in the HETDEX spectra (where "strong" is defined as outside of -1.0 to 2.0 $\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ with the negative range included to handle poor fitting and over subtraction) were excluded. This also removed any bright continuum LAEs (again, some AGN), but for the purpose of exploring the more common population of galaxies, this was desirable and whittled the sample down by another 26\%. 
 
 \subsection{Emission Line Width}
+To remove charge traps, stuck pixels, hot columns or other non-astrophysical spikes in the data counts masquerading as signals, we imposed a minimum width ($\sigma gt 1.85$ ) to the Gaussian fit on the detection. Very few such false detections passed the initial HETDEX detection search, so this cut excluded less than 2\%. 
 
-\subsection{Emission Line Flux}
+To this point, the total number of candidate detections has fallen to less than 5\% of the full set, but still numbers more than 30,000. While some measurement and reduction artifacts remain, most of these represent real astrophysical sources, though perhaps only 1/3 are Lyman$\alpha$, so the next steps were focused on line classification. 
 
-\subsection{Photometric Imaging}
+{ \color{red} todo: technically, an upper limit was also set, but it had zero impact ... and in the actual run, it was not included in the query}
 
 
-\subsection{Neighborhood}
-In an effort to eliminate source confusion (even if all nearby sources are likely LAEs (potentially interacting) and the inclusion of light from other (bright and/or spatially extended) sources, we next examined the (on-sky) projected neighborhood around each target and reject any detections that have one or more 'bad neighbors'. We first eliminated any (point source like) detection with a neighboring source brighter than 26th magnitude within 5", then reduce the magnitude and the separations, rejecting detections with neighbors fainter than 26 inside 4", fainter than 27 inside 3" and fainter than 28 inside 2". 
+\subsection{P(LAE)/P(OII)}
 
-Lastly, the remaining set of detections were each manually examined, checking extended photometric cutout regions (out to 30" in radius) to remove any detections that were potentially in the halo or outer regions of a spatially extended source (see the Manual Examination Subsection).
+As described earlier in section \ref{sec:elixer} and in {\color{red} todo cite Andrew 2017} the principle automated classification mechanism employed by HDR1 was the Bayesian P(LAE)/P(OII) ratio. Since the continuum estimate was provided from multiple sources and each was sub-optimal and computed separately, inclusion in the final data set required that each available measure of P(LAE)/P(OII) agree. To be considered for this sample, all detections must have had valid P(LAE)/P(OII) calculations for the equivalent widths originating from the HETDEX spectra continuum estimate and the imaging fixed aperture continuum estimate. If either ratio was unavailable (for any reason), the detection was excluded. Not every detection had exactly one photometric catalog counterpart (those with ambiguous counterparts were removed in a later step), but where a photometric counterpart was identified, the P(LAE)/P(OII) ratio computed for its reported g-band or r-band magnitude was required to agree with the other two calculations. For the purpose of this work, ratios greater than 5 were considered probable LAE candidates (vs OII candidates).
 
+After applying this criterion, 86\% of the remaining candidates were removed from the same for one or more of the P(LAE)/P(OII) ratios calculated below the threshold. This does not necessarily mean that a rejected candidate is not an LAE (as is discussed later in section \ref{sec:discussion}), only that the calculations failed to all agree that the candidate was likely an LAE.
+
+
+\subsection{Catalog Neighborhood}
+In an effort to eliminate source confusion (even if all nearby sources are likely LAEs (potentially interacting) and the inclusion of light from other (bright and/or spatially extended) sources, we next examined the (on-sky) projected neighborhood around each target and reject any detections that have one or more 'bad neighbors'. We first eliminated any (point source like) detection with a neighboring source brighter than 26th magnitude within 5", then reduce the magnitude and the separations, rejecting detections with neighbors fainter than 26 inside 4", fainter than 27 inside 3" and fainter than 28 inside 2". This removed 2\% of the remaining candidates.
+
+
+%Lastly, the remaining set of detections were each manually examined, checking extended photometric cutout regions (out to 30" in radius) to remove any detections that were potentially in the halo or outer regions of a spatially extended source (see the Manual Examination Subsection).
+
+
+\subsection{Nearby HETDEX Detections}
+anything inside 5" removed (partly to avoid LOS bias)
+which one kept effectictely random as the lower ID number was kept (not snr or flux etc)
 
 \subsection{Sky Fibers}
 In order to assert a positive detection above sky noise, it was necessary to identify and average over a large number of "blank" sky fibers. The initial sample of sky fibers was taken as the set of all fibers that shared a VIRUS Amplifier (for the same exposure) with one or more of the fibers included in a detection. That sample was then reduced to include only those fibers that did not exhibit obvious continuum or emission by removing from the set any fiber with one or more 2$\AA$ wide bins with flux exceeding $3.0\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ or one or more 500$\AA$ wide bins with mean flux outside $\pm 1.0 \times 10^{-17} erg\ s^{-1}\ cm^{-2}$.    { \color{red} todo: how many total sky fibers included, (less useful) what fraction were removed?}
+
+\subsection{Photometric Imaging}
+At the time of this writing, approximately 1/3 of the HDR1 detections have not been matched with photometric imaging. Since continuum estimation from imaging is crucial in helping discriminate between Ly$\alpha$ and the primary contaminant ([OII]) as well as providing a manual check on source confusion from line of sight or proximate interlopers, all detections, regardless of their other attributes, without imaging were removed from consideration.
+
+
  
 \subsection{Edge Fibers}
 If too much of a detections light falls off the edge of an IFU, it becomes difficult or impossible to correctly model the astrometric solution and obtain a proper determination of the flux (accounting for lost light, etc). Of particular issue for this work is the loss of shorter-wavelength light due to DAR (which would fall off the edge of the detector). Without an accurate position, we cannot match the detection to the correct counterpart in a photometric catalog and without a correct spectra we cannot apply the various selection criteria or make a justifiably accurate classification. While it may be possible to correct these issues for specific observations depending on the orientation of the instrument and how much light and position information is lost, for the limited purpose and scope of this paper, any detection whose most central (highest weighted) lay on the edge of its IFU was removed from consideration.  { \color{red} todo: detections removed or fraction of detections removed}
@@ -227,6 +248,9 @@ TBD description of analysis (shifting, stacking, etc) use of biweight vs mean vs
 
 \section{Discussion and Future Work} \label{sec:discussion}
 TBD brief discussion and future todos
+
+{ \color{red} todo: Ly series and other lines appear to show a small offset to the blue, possibly indicative of LyA velocity offset, but would want much more data to identify and quantify}
+
 { \color{red} todo: discussion point, this is early data and classification is primitive ... HDR1 to inform and shape automated classification (machine learning, Bayesian ratio thresholds,etc) ... we do not know the probable fraction of contamination, etc; improvements to sky subtraction (can be wiping out true continuum), but is pretty good for local (to amp) sky}
 
 { \color{red} todo: discussion point, may have to manually inspect each detection ... mechanical turk?}
