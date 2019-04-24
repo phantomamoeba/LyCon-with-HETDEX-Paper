@@ -173,7 +173,7 @@ TBD basic data reduction ... reference instead a HETDEX paper?
 { \color{red} todo: Section or Subsection on key ELiXer features (PLAE/POII, catalog integration, aperture magnitudes) ?}
 
 \subsection{Emission Line eXplorer} \label{sec:elixer}
-{ \color{red} todo: maybe should be a subsection under Data Reduction? Hit the key points of ELiXer ... visual overview, imaging integration, PLAE/POII (cite Leung 2017) and source of the continuum estimates .... note the non-uniformity of the photometry and ELiXer's aperture magnitude }
+{ \color{red} todo: maybe should be a subsection under Data Reduction? Hit the key points of ELiXer ... visual overview, imaging integration, PLAE/POII (cite Leung 2016) and source of the continuum estimates .... note the non-uniformity of the photometry and ELiXer's aperture magnitude }
 
 
 \section{Data Selection} \label{sec:selection}
@@ -199,7 +199,7 @@ Closely related to the SNR cut, the $\chi^{2}$ limit of 2.0 was imposed to remov
 As a likely indicator that the host is not an LAE (excepting quasars and other AGN), any detections with strong continuum observed in the HETDEX spectra (where "strong" is defined as outside of -1.0 to 2.0 $\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ with the negative range included to handle poor fitting and over subtraction) were excluded. This also removed any bright continuum LAEs (again, some AGN), but for the purpose of exploring the more common population of galaxies, this was desirable and whittled the sample down by another 26\%. 
 
 \subsection{Emission Line Width}
-To remove charge traps, stuck pixels, hot columns or other non-astrophysical spikes in the data counts masquerading as signals, we imposed a minimum width ($\sigma gt 1.85$ ) to the Gaussian fit on the detection. Very few such false detections passed the initial HETDEX detection search, so this cut excluded less than 2\%. 
+To remove charge traps, stuck pixels, hot columns or other non-astrophysical spikes in the data counts masquerading as signals, we imposed a minimum width ($\sigma > 1.85$ ) to the Gaussian fit on the detection. Very few such false detections passed the initial HETDEX detection search, so this cut excluded less than 2\%. 
 
 To this point, the total number of candidate detections has fallen to less than 5\% of the full set, but still numbers more than 30,000. While some measurement and reduction artifacts remain, most of these represent real astrophysical sources, though perhaps only 1/3 are Ly$\alpha$, so the next steps were focused on line classification. 
 
@@ -208,7 +208,7 @@ To this point, the total number of candidate detections has fallen to less than 
 
 \subsection{P(LAE)/P(OII)}
 
-As described earlier in section \ref{sec:elixer} and in {\color{red} todo cite Andrew 2017} the principle automated classification mechanism employed by HDR1 was the Bayesian P(LAE)/P(OII) ratio. Since the continuum estimate was provided from multiple sources and each was sub-optimal and computed separately, inclusion in the final data set required that each available measure of P(LAE)/P(OII) agree. To be considered for this sample, all detections must have had valid P(LAE)/P(OII) calculations for the equivalent widths originating from the HETDEX spectra continuum estimate and the imaging fixed aperture continuum estimate. If either ratio was unavailable (for any reason), the detection was excluded. Not every detection had exactly one photometric catalog counterpart (those with ambiguous counterparts were removed in a later step), but where a photometric counterpart was identified, the P(LAE)/P(OII) ratio computed for its reported g-band or r-band magnitude was required to agree with the other two calculations. For the purpose of this work, ratios greater than 5 were considered probable LAE candidates (vs OII candidates).
+As described in \cite{Leung} the principle automated classification mechanism employed by HDR1 was the Bayesian P(LAE)/P(OII) ratio. Since the continuum estimate was provided from multiple sources and each was sub-optimal and computed separately, inclusion in the final data set required that each available measure of P(LAE)/P(OII) agree. To be considered for this sample, all detections must have had valid P(LAE)/P(OII) calculations for the equivalent widths originating from the HETDEX spectra continuum estimate and the imaging fixed aperture continuum estimate. If either ratio was unavailable (for any reason), the detection was excluded. Not every detection had exactly one photometric catalog counterpart (those with ambiguous counterparts were removed in a later step), but where a photometric counterpart was identified, the P(LAE)/P(OII) ratio computed for its reported g-band or r-band magnitude was required to agree with the other two calculations. For the purpose of this work, ratios greater than 5 were considered probable LAE candidates (vs OII candidates).
 
 After applying this criterion, 77\% of the remaining candidates were removed from the same for one or more of the P(LAE)/P(OII) ratios calculated below the threshold. This does not necessarily mean that a rejected candidate is not an LAE (as is discussed later in section \ref{sec:discussion}), only that the calculations failed to all agree that the candidate was likely an LAE.
 
@@ -658,6 +658,9 @@ Finkelstein S. et al "Conditions for Reionizing the Universe with a Low Galaxy I
 \bibitem[Gazagnes et al (2018)]{Gazagnes}
 Gazagnes, S. et al "Neutral gas properties of Lyman continuum emitting galaxies: Column densities and covering fractions from UV absorption lines", arXiv:1802.06378v2 (2018)
 
+\bibitem[Leung et al (2016)]{Leung}
+Leung, A. et al "Bayesian Redshift Classification of Emission-line Galaxies with Photometric Equivalent Widths", arXiv: 1510.07043v2 (2016)
+
 \bibitem[Livermore and Finkelstein (2018)]{Livermore}
 Livermore, R.C. and Finkelstein, S.L. "Directly Observing the Galaxies Likely Responsible for Reionization" arXiv:1604.06799v2 (2018)
 
@@ -667,11 +670,8 @@ Stark, D., "Galaxies in the First Billion Years After the Big Bang", Annu. Rev. 
 \bibitem[Steidel et al (2018)]{Steidel}
 Steidel, C. et al "The Keck Lyman Continuum Spectroscopic Survey (KLCS): The Emergent Ionizing Spectrum of Galaxies at z $\sim$ 3", arXiv:1805.06071v2 (2018)
 
-\bibitem[Tsang (2017)]{Tsang}
-Tsang, B. "Supernovae Made Way for Cosmic Reionization", Astrobites May 29, 2017
-
-\bibitem[Yue et al (2018)]{Yue}
-Yue, B. et al "On the Faint-End of the Galaxy Luminosity Function in the Epoch of Reionization: Updated Constraints from the HST Frontier Fields", arXiv:1711.05130v4 (2018)
+%\bibitem[Yue et al (2018)]{Yue}
+%Yue, B. et al "On the Faint-End of the Galaxy Luminosity Function in the Epoch of Reionization: Updated %Constraints from the HST Frontier Fields", arXiv:1711.05130v4 (2018)
 
 \bibitem[Zackrisson et al (2017)]{Zackrisson}
 Zackrisson, E., et al "The Spectral Evolution of the First Galaxies. III. Simulated James Webb Space Telescope Spectra of Reionization-Epoch Galaxies with Lyman Continuum Leakage", arXiv:1608.08217v2 (2017)
