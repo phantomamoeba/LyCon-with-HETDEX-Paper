@@ -11,6 +11,8 @@
 \usepackage{float}
 \usepackage{longtable}
 
+
+
 %% Tells LaTeX to search for image files in the 
 %% current directory as well as in the figures/ folder.
 \graphicspath{{./}{figures/}}
@@ -131,14 +133,14 @@ Austin, TX}
 
 \begin{abstract}
 
-We extract a small, clean sample of Lyman Alpha Emitters from z $\approx$ 3 - 3.5 from the HETDEX Data Release 1 and stack the 1D detection spectra to explore the feasibility of detecting (in ensemble) Lyman Continuum photons (880-910 $\AA$) for future correlation with measurable characteristics of individual galaxies with the ultimate goal of constraining the escape of extreme UV radiation from galactic analogs during the Epoch of Reionization.
+I extract a small, clean sample of Lyman Alpha Emitters from z $\approx$ 3 to 3.5 from the HETDEX Data Release 1 and stack the 1D detection spectra to explore the feasibility of detecting (in ensemble) Lyman Continuum photons (880-910 $\mbox{\AA}$) for future correlation with measurable characteristics of individual galaxies and ensembles of galaxies with the ultimate goal of constraining the escape of extreme UV radiation from galactic analogs during the Epoch of Reionization.
 
 \end{abstract}
 
 %% Keywords should appear after the \end{abstract} command. 
 %% See the online documentation for the full list of available subject
 %% keywords and the rules for their use.
-\keywords{Lyman Continuum, HETDEX}
+\keywords{Lyman Continuum, Lyman Alpha, HETDEX, Reionization}
 
 
 
@@ -147,181 +149,166 @@ We extract a small, clean sample of Lyman Alpha Emitters from z $\approx$ 3 - 3.
 By approximately 400,000 years into its life, the universe had expanded (and cooled) sufficiently to allow the naked protons created in the Big Bang to capture electrons and form neutral atoms (mostly hydrogen). As the universe continued to expand and cool, clumps of gas began to accumulate in dark matter halos, eventually giving birth to the first (Population I) stars (z $\sim$ 20-30) and later still the first galaxies (z $\sim$ 10) \cite{Bromm}. High energy photons, generally from massive main sequence stars, supernovae, and quasars, began filling the universe and, as they encountered neutral atoms, stripped away their electrons, (re)ionizing them. By z $\sim$ 6-7, the intergalactic medium (IGM) is almost fully (re)ionized (though there remain scattered clouds of neutral gas) \cite{Stark}.\\
 
 
-An active line of research is attempting to ascertain the major contributors of these hard ionizing photons. While it is accepted that the individual sources of the extreme UV photons are the most massive (O-type) stars and AGN, it is unclear whether, predominantly, the galactic hosts of these photon produces are the relatively few, massive and bright ($> M^{*}$, star forming rate (SFR) $> 1000^{+} M_{\odot}/yr$) galaxies or the far more numerous, smaller and fainter (modest SFR few $\times 10 - 100 M_{\odot}/yr$). Essentially, this is asking whether reionization started early with faint galaxies ($M_{UV} > -15$) and ramped up slowly, or started later, allowing time for larger galaxies ($M_{UV} < -17$) to form and proceeded at a much accelerated pace (\cite{Livermore}, \cite{Finkelstein}). This, in turn, then is effectively a question of escape fraction ... how many of the hard UV photons ($< 912\AA$) produced in the various galaxies survive the local conditions in the interstellar medium (ISM) and circumgalactic medium (CGM) to escape and contribute to the reionization of the IGM.\\
+An active line of research is attempting to ascertain the major contributors of these hard ionizing photons. While it is accepted that the individual sources of the extreme UV photons are the most massive (O-type) stars and AGN, it is unclear whether, predominantly, the galactic hosts of these photon produces are the relatively few, massive and bright ($> M^{*}$, star forming rate (SFR) $> 1000^{+} M_{\odot}/yr$) galaxies or the far more numerous, smaller and fainter (modest SFR few $\times 10 - 100 M_{\odot}/yr$). Essentially, this is asking whether reionization started early with faint galaxies ($M_{UV} > -15$) and ramped up slowly, or started later, allowing time for larger galaxies ($M_{UV} < -17$) to form and proceeded at a much accelerated pace (\cite{Livermore}, \cite{Finkelstein}). This, in turn, then is effectively a question of escape fraction ... how many of the hard UV photons ($< 912\mbox{\AA}$) produced in the various galaxies survive the local conditions in the interstellar medium (ISM) and circumgalactic medium (CGM) to escape and contribute to the reionization of the IGM.\\
 
 
-Ideally, we would resolve this issue by directly measuring $f_{esc}$, but as we push to higher redshifts, photons with wavelengths shorter than Ly$\alpha$ (1216$\AA$) and especially the hard ionizing photons we wish to measure (short-ward of the Lyman Limit (912$\AA$)) are seriously attenuated by clouds of neutral hydrogen along our line of sight such that, in the most optimistic case, by z=4 (well short of our target of 7 $<$ z $<$ 9) the signal is gone. Though it would be impossible to directly measure $f_{esc}$, all hope is not lost if it is possible to accurately estimate $f_{esc}$ from other measurements that can actually be made using lower redshift analogs.\\
+Ideally, we would resolve this issue by directly measuring $f_{esc}$, but as we push to higher redshifts, photons with wavelengths shorter than Ly$\alpha$ (1216$\mbox{\AA}$) and especially the hard ionizing photons we wish to measure (short-ward of the Lyman Limit (912$\mbox{\AA}$)) are seriously attenuated by clouds of neutral hydrogen along our line of sight such that, in the most optimistic case, by z=4 (well short of our target of 7 $<$ z $<$ 9) the signal is gone. Though it would be impossible to directly measure $f_{esc}$, all hope is not lost if it is possible to accurately estimate $f_{esc}$ from other measurements that can actually be made using lower redshift analogs.\\
 
 
 The Hobby-Eberly Telescope Dark Energy eXperiment (HETDEX) is a massive, multi-year blind spectroscopy survey of some 450 square degrees, mapping out the 3D positions ($\alpha,\delta,z$) of $\sim 10^6$ Lyman Alpha Emitting (LAE) galaxies (detected due to their bright emission in Ly$\alpha$) approximately z $\in$ [1.9,3.5] as well as similar number of lower redshift (mostly detected in [OII]) galaxies. Though still ramping up, HETDEX recently (April 2019) released its first data set, HETDEX Data Release 1 (HDR1) with almost 700,000 emission line detections from its first two years of observations. Using this dataset, we identify galaxies with Ly$\alpha$ emission at the higher redshift end (z $\in$ [3.0,3.5]) of the survey that are free from contamination from lower z foreground objects and stack their spectra in a first step in quantifying the escaping Lyman Continuum and exploring the ensemble properties of these analogs of the galaxies driving reionization. Future work will further subselect from these data and combine with archival photometry to explore correlations between individually measurable and inferrable properties (z, Ly$\alpha$ equivalent width, SED fit SFR, etc) and aggregate Lyman Continuum levels.\\
 
-{ \color{red} todo: layout of paper ...}
 
-In section \ref{sec:obs} ...
+The paper is arranged as follows: Sections \ref{sec:obs} and \ref{sec:reduction} provide a brief overview of the observations and data reduction; Section \ref{sec:selection} describes is some detail the specifics of the criteria and mechanics used to select the data set; Section \ref{sec:analysis} discusses the basic analysis and summarizes their results; and Section \ref{sec:discussion} examines the conclusions and their limitations and forecasts future work. No particular cosmology is assumed for this work.\\
 
 
-{ \color{red} todo: Fix voice and tense ... should I stay present or force all to past?}
 
 \section{Observations} \label{sec:obs}
 
-TBD basics on observations (dates, sky regions, num fibers, etc)
+HETDEX Data Release 1 contains observations from January 2017 through February 2019 with more than 1700 shots, growing to 46 installed VIRUS spectrographs over that time. Most of the data collected was from two fields, the spring field (roughly RA $120^{\circ}$ to $240^{\circ}$ and Dec $57^{\circ}$ to $63^{\circ}$) and the fall field (roughly RA $5^{\circ}$ to $40^{\circ}$ and Dec $-4^{\circ}$ to $4^{\circ}$), though scattered other pointings are also included. Standard observations consist of three, six minute exposures in a regular (triangular) dither pattern to accomplish a near 100\% fill factor for each IFU footprint. \\
+
+The complete details for individual observations (date, time, RA, Dec, number of fibers, dither positions, conditions, etc) are available in the HDR1 repository.\\
 
 \section{Data Reduction} \label{sec:reduction}
 
-TBD basic data reduction ... reference instead a HETDEX paper?
+Prior to consumption in this work, the data are reduced (producing cleaned, sky subtracted, rectified, flux calibrated spectra for each fiber) and initial detections are made, combining multiple fibers inside apertures and weighting according to a point source model. Full details of the reduction pipleline and detection methods will be provided in a HETDEX methods paper, in prep.\\
 
-{ \color{red} todo: Section or Subsection on key ELiXer features (PLAE/POII, catalog integration, aperture magnitudes) ?}
 
-\subsection{Emission Line eXplorer} \label{sec:elixer}
-{ \color{red} todo: maybe should be a subsection under Data Reduction? Hit the key points of ELiXer ... visual overview, imaging integration, PLAE/POII (cite Leung 2016) and source of the continuum estimates .... note the non-uniformity of the photometry and ELiXer's aperture magnitude }
+The principal investigative tool for detections is the HETDEX Emission Line eXplorer (ELiXer), which combines the HETDEX reduced data and archival imaging surveys into single page reports for each emission line detection to aid classification and diagnostics. Details of the methods and operation of ELiXer are available in the HDR1 documentation.
 
 
 \section{Data Selection} \label{sec:selection}
 
-As it is absolutely critical that the data sample is free of mis-identifications and (especially insidious) faint continuum interlopers along the line of sight. Strict selection criteria were applied (described below in the order of application), and, because the more automated classification processes were not yet available, each potential detection was manually inspected before being included in the data set. As such, the selection criteria were set not only to isolate a clean sample, but also to keep the number of detections manageable for the bottleneck of manual examination. As the full HDR1 emission line catalog contains 690,868 detections (approximately 1/2 spurious and 1/4 not Ly$\alpha$) and the sample for this work was reduced to 271, certainly most valid LAEs were left "on the table" due to these highly limiting (but necessary) restrictions. 
+As it is absolutely critical that the data sample is free of misidentifications and (especially insidious) faint continuum interlopers along the line of sight. Strict selection criteria were applied (described below in the order of application), and because more automated classification processes were not yet available, each potential detection was manually inspected before being included in the data set. As such, the selection criteria were set not only to isolate a clean sample, but also to keep the number of detections manageable for the bottleneck of manual examination. As the full HDR1 emission line catalog contains 690,868 detections (up to 1/2 spurious and 1/4 not Ly$\alpha$) and the sample for this work was reduced to 270, certainly most valid LAEs were left "on the table" due to these highly limiting restrictions. \\
 
-The initial sample selection sought to eliminate obvious contaminants, spurious detections, and undesirable LAEs (specifically AGN with obvious continuum).
-
-todo: go through each selection and provide pre/post selection counts and justification for the value used
-
-The first step in reducing the potential LAE candidates from the set of all candidate detections in HDR1 was a simple threshold filter over several criteria. 
+The initial sample selection sought to eliminate obvious contaminants, spurious detections, and undesirable LAEs (specifically AGN with obvious continuum). The first step in reducing the potential LAE candidates from the set of all candidate detections in HDR1 was a simple threshold filter over several criteria. \\
 
 \subsection{Emission Wavelength}
-Perhaps the easiest selection criteria to impose was the emission wavelength cut. Since we were interested in Lyman Continuum (880-910$\AA$) and the HETDEX observable wavelength range is 3470-5520 $\AA$, the minimum observed emission line wavelength was selected as 4860 $\AA$ (or z $\approx$ 3 for Ly$\alpha$) so that the blue end of our targeted Lyman Continuum range will be captured by the VIRUS spectrographs allowing for some small variation in each detector's wavelength range and avoid the edgemost pixels. This cut eliminated $\sim$ 75\% of all detections.
+Perhaps the easiest selection criteria to impose was the emission wavelength cut. Since the spectral region of interest was Lyman Continuum (880-910$\mbox{\AA}$ and the HETDEX observable wavelength range is 3470-5520$\mbox{\AA}$, the minimum observed emission line wavelength was selected as 4860$\mbox{\AA}$ (or z $\approx$ 3 for Ly$\alpha$) so that the blue end of our targeted Lyman Continuum range will be captured by the VIRUS spectrographs allowing for some small variation in each detector's wavelength range and avoid the edgemost pixels. This cut eliminated $\sim$ 75\% of all detections.\\
 
 \subsection{Signal to Noise Ratio}
-Although there is good recovery down to a SNR of approximately 5.2  { \color{red} todo: cite future? HETDEX paper of junk vs good recovery in Chenxu/Erin simulations}, in an effort to keep this preliminary manual examination sample manageable, a SNR minimum threshold of 6.5 was enforced. This reduced the sample size by another 61\%.
+Although there is good recovery down to a SNR of approximately 5, the relative number of false detections grows with decreasing SNR and, in an effort to keep this preliminary manual examination sample manageable, a SNR minimum threshold of 6.5 was enforced. This reduced the sample size by another 61\%.\\
 
 \subsection{$\chi^{2}$ Model Fit}
-Closely related to the SNR cut, the $\chi^{2}$ limit of 2.0 was imposed to remove most detections of dubious quality, keeping only those detections with essentially single Gaussian line profiles within 50 $\AA$ of the line center.  { \color{red} todo: confirm the 50 AA ... might have been 40?} { \color{red} todo: also cite future? HETDEX paper of junk vs good recovery in Chenxu/Erin simulations}. This removed an additional 34\% of detections.
+Closely related to the SNR cut, a $\chi^{2}$ limit of 2.0 was imposed to remove many detections of dubious quality, keeping only those detections with a good fit to a single Gaussian line profile. This removed an additional 34\% of detections.\\
 
 \subsection{Continuum Level}
-As a likely indicator that the host is not an LAE (excepting quasars and other AGN), any detections with strong continuum observed in the HETDEX spectra (where "strong" is defined as outside of -1.0 to 2.0 $\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ with the negative range included to handle poor fitting and over subtraction) were excluded. This also removed any bright continuum LAEs (again, some AGN), but for the purpose of exploring the more common population of galaxies, this was desirable and whittled the sample down by another 26\%. 
+As a likely indicator that the host is not an LAE (excepting some AGN), any detections with strong continuum observed in the HETDEX spectra (where "strong" is defined as outside of -1.0 to 2.0 $\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ with the negative range included to handle poor fitting and over subtraction) were excluded. This also removed any bright continuum LAEs (again, some AGN), but for the purpose of exploring the more common population of galaxies, this was desirable and whittled the sample down by another 26\%. \\
 
 \subsection{Emission Line Width}
-To remove charge traps, stuck pixels, hot columns or other non-astrophysical spikes in the data counts masquerading as signals, we imposed a minimum width ($\sigma > 1.85$ ) to the Gaussian fit on the detection. Very few such false detections passed the initial HETDEX detection search, so this cut excluded less than 2\%. 
+To remove charge traps, stuck pixels, hot columns or other non-astrophysical spikes in the data counts masquerading as signals, I imposed a minimum width ($\sigma > 1.85$ ) to the Gaussian fit on the detection. Very few such false detections passed the initial HETDEX detection search, so this cut excluded less than 2\%. \\
 
-To this point, the total number of candidate detections has fallen to less than 5\% of the full set, but still numbers more than 30,000. While some measurement and reduction artifacts remain, most of these represent real astrophysical sources, though perhaps only 1/3 are Ly$\alpha$, so the next steps were focused on line classification. 
-
-{ \color{red} todo: technically, an upper limit was also set, but it had zero impact ... and in the actual run, it was not included in the query}
+To this point, the total number of candidate detections has fallen to less than 5\% of the full set, but still numbers more than 30,000. While some measurement and reduction artifacts remain, most of these represent real astrophysical sources, though perhaps only 1/3 are Ly$\alpha$, so the next steps were focused on line classification. \\
 
 
 \subsection{P(LAE)/P(OII)}
 
-As described in \cite{Leung} the principle automated classification mechanism employed by HDR1 was the Bayesian P(LAE)/P(OII) ratio. Since the continuum estimate was provided from multiple sources and each was sub-optimal and computed separately, inclusion in the final data set required that each available measure of P(LAE)/P(OII) agree. To be considered for this sample, all detections must have had valid P(LAE)/P(OII) calculations for the equivalent widths originating from the HETDEX spectra continuum estimate and the imaging fixed aperture continuum estimate. If either ratio was unavailable (for any reason), the detection was excluded. Not every detection had exactly one photometric catalog counterpart (those with ambiguous counterparts were removed in a later step), but where a photometric counterpart was identified, the P(LAE)/P(OII) ratio computed for its reported g-band or r-band magnitude was required to agree with the other two calculations. For the purpose of this work, ratios greater than 5 were considered probable LAE candidates (vs OII candidates).
+As described in \cite{Leung} the principle automated classification mechanism employed by HDR1 was the Bayesian P(LAE)/P(OII) ratio. Since the continuum estimate was provided from multiple sources and each was sub-optimal and computed separately, inclusion in the final data set required that each available measure of P(LAE)/P(OII) agree. To be considered for this sample, all detections must have had valid P(LAE)/P(OII) calculations for the equivalent widths originating from the HETDEX spectra continuum estimate and the imaging fixed aperture continuum estimate. If either ratio was unavailable (for any reason), the detection was excluded. Not every detection had exactly one photometric catalog counterpart (those with ambiguous counterparts were removed in a later step), but where a photometric counterpart was identified, the P(LAE)/P(OII) ratio computed for its reported g-band or r-band magnitude was required to agree with the other two calculations. For the purpose of this work, ratios greater than 5 were considered probable LAE candidates (vs OII candidates). It should be noted that this cut was performed prior to the manual classification of large numbers of detections so the value of 5 is not calibrated and future data selections may use a different threshold.\\
 
-After applying this criterion, 77\% of the remaining candidates were removed from the same for one or more of the P(LAE)/P(OII) ratios calculated below the threshold. This does not necessarily mean that a rejected candidate is not an LAE (as is discussed later in section \ref{sec:discussion}), only that the calculations failed to all agree that the candidate was likely an LAE.
+After applying this criterion, 77\% of the remaining candidates were removed from the same for one or more of the P(LAE)/P(OII) ratios calculated below the threshold. This does not necessarily mean that a rejected candidate is not an LAE (as is discussed later in section \ref{sec:discussion}), only that the calculations failed to all agree that the candidate was likely an LAE.\\
 
 \subsection{Catalog Closest Match}
-Detections whose closest imaging catalog match (inside 3") was farther than 1" from the HETDEX weighted sky position was assumed to have possible issues with the astrometry. This is admittedly a weak assumption as the HDR1 astrometry was expected to be better than 1" (near 0.5") {\color{red} todo cite future HETDEX paper? ... after the number of IFUs reached 20 or so?} and the astrometry of the catalogs was not verified nor was the spatial extent of the catalog object or the HETDEX detection taken into consideration. Nevertheless, as the imaging catalogs played an important role in source identification, this potential discrepancy was mitigated by excluding such candidates from the final sample, removing 58\% of what remained.
+Detections whose closest imaging catalog match (inside 3") was farther than 1" from the HETDEX weighted sky position was assumed to have possible issues with the astrometry. This is admittedly a weak assumption as the HDR1 astrometry was expected to be better than 1" (near 0.5") and the astrometry of the catalogs was not verified nor was the spatial extent of the catalog object or the HETDEX detection taken into consideration. Nevertheless, as the imaging catalogs played an important role in source identification, this potential discrepancy was mitigated by excluding such candidates from the final sample, removing 58\% of what remained.\\
 
 
 \subsection{Catalog Neighborhood}  \label{sec:catalog_neighbors}
-In an effort to eliminate source confusion (even if all nearby sources are likely LAEs (potentially interacting) and the inclusion of light from other (bright and/or spatially extended) sources, we next examined the (on-sky) projected neighborhood around each target and reject any detections that have one or more 'bad neighbors'. We first eliminated any (point source like) detection with a neighboring source brighter than 26th magnitude within 5", then reduce the magnitude and the separations, rejecting detections with neighbors fainter than 26 $mag_{AB}$ inside 4", fainter than 27 $mag_{AB}$ inside 3" and fainter than 28 $mag_{AB}$ inside 2". This removed 2\% of the remaining candidates.
+In an effort to eliminate source confusion (even if all nearby sources are likely LAEs (potentially interacting) and the inclusion of light from other (bright and/or spatially extended) sources, I next examined the (on-sky) projected neighborhood around each target and reject any detections that have one or more "bad neighbors". I first eliminated any (point source like) detection with a neighboring source brighter than 26th magnitude within 5", then reduce the magnitude and the separations, rejecting detections with neighbors fainter than 26 $mag_{AB}$ inside 4", fainter than 27 $mag_{AB}$ inside 3" and fainter than 28 $mag_{AB}$ inside 2". Again, it is important to note that this selection criterion assumed a point source model and did not take spatial extent into account (though that was examined in the final, manual inspection). This removed 2\% of the remaining candidates.\\
 
 
 \subsection{Nearby HETDEX Detections}
 To reduce any line of sight biases (the over contribution of sources along lucky (or unlucky) lines of sight with abnormally low (or high) encounters with intervening neutral Hydrogen) no emission line detection within 5" of any other detection was allowed into the sample. The selection was effectively random as the second to nth subsequent detection was omitted based on the order in which they were imported (loosely in observation date order) and not on any characteristic (such as SNR or equivalent width). This condition reduced the sample by another 8\%.\\
 
-The sample has been reduced to only 1828 candidate detections (some 0.26\% of the full HDR1 catalog) and the final sample selection was conducted via individual visual inspections of the corresponding ELiXer reports.
+The applied criteria above reduced the almost 700K detections to a manageable 1828 candidates (some 0.26\% of the full HDR1 catalog) and allowed the final sample selection to be conducted via individual visual inspections of the corresponding ELiXer reports within a dozen hours.\\
 
 \subsection{Photometric Imaging}
-At the time of this writing, approximately 1/3 of the HDR1 detections have not been matched with photometric imaging. Since continuum estimation from imaging is crucial in helping discriminate between Ly$\alpha$ and the primary contaminant ([OII]) as well as providing a manual check on source confusion from line of sight or proximate interlopers, all detections, regardless of their other attributes, without imaging were removed from consideration. This did not remove candidate detections that did not have a corresponding catalog detection (as the depth of the imaging was variable and the conditions for catalog inclusion were not uniform), but removed only those candidates without an overlapping image or where the image was corrupt, masked, incomplete, or otherwise poor. This eliminated 609 (33\%) of the remaining sample.
+At the time of this writing, approximately 1/3 of the HDR1 detections had not been matched with photometric imaging. Since continuum estimation from imaging is crucial in helping discriminate between Ly$\alpha$ and the primary contaminant ([OII]) as well as providing a manual check on source confusion from line of sight or proximate interlopers, all detections, regardless of their other attributes, without imaging were removed from consideration. This did not remove candidate detections that did not have a corresponding catalog detection (as the depth of the imaging was variable and the conditions for catalog inclusion were not uniform), but removed only those candidates without an overlapping image or where the image was corrupt, masked, incomplete, or otherwise poor. This eliminated 609 (33\%) of the remaining sample.\\
 
  \subsection{Missing Data}
- Any ELiXer reports that had missing data elements (for any reason ... missing reduction data, read error, communication or memory error during report generation, etc) was excluded. This accounted for the removal of another 101 detecions. It should be noted that there was an ingestion error (probably an I/O issue at the time HDR1 was assembled) with two observations that happened to be included in this reduced data set and all the detections from those two observations were the source of these removals. 
+ Any ELiXer reports that had missing data elements (for any reason ... missing reduction data, read error, communication or memory error during report generation, etc) was excluded. This accounted for the removal of another 101 detecions. It should be noted that there was an ingestion error (probably an I/O issue at the time HDR1 was assembled) with two observations that happened to be included in this reduced data set and all the detections from those two observations were the source of these removals.\\
  
 \subsection{Edge Fibers}
-If too much of a detections light falls off the edge of an IFU, it becomes difficult or impossible to correctly model the astrometric solution and obtain a proper determination of the flux (accounting for lost light, etc). Of particular issue for this work is the loss of shorter-wavelength light due to differential atmospheric refraction (DAR) which could cause the bluer light to fall off the edge of the detector. { \color{red} todo: cite 0.9" dispersion from fiber center and fibers only 0.75" radius} Without an accurate position, we cannot match the detection to the correct counterpart in a photometric catalog and without a correct spectra we cannot apply the various selection criteria or make a justifiably accurate classification. While it may be possible to correct these issues for specific observations depending on the orientation of the instrument and how much light and position information is lost, for the limited purpose and scope of this paper, any detection whose most central (highest weighted) lay on the edge of its IFU was removed from consideration. This condition eliminated 97 detections. 
+If too much of a detection's light falls off the edge of an IFU, it becomes difficult or impossible to correctly model the astrometric solution and obtain a proper determination of the flux (accounting for lost light, etc). Of particular issue for this work is the loss of shorter-wavelength light due to differential atmospheric refraction (DAR) which could cause the bluer light to fall off the edge of the detector. Without an accurate position, we cannot match the detection to the correct counterpart in a photometric catalog and without a correct spectra we cannot apply the various selection criteria or make a justifiably accurate classification. While it may be possible to correct these issues for specific observations depending on the orientation of the instrument and how much light and position information is lost, for the limited purpose and scope of this paper, any detection whose most central (highest weighted) fiber lay on the edge of its IFU was removed from consideration. This condition eliminated 97 detections. \\
 
 \subsection{Non-Ly$\alpha$ Sources}
-Any detections that were clearly not Ly$\alpha$ as generally evidenced by multiple emission lines that could not be consistent with a Ly$\alpha$ classification were removed. This comprised 77 detection that mostly consisted of resolved low-z galaxies where the HETDEX selected line was not [OII] (often an OIII or H$\beta$ line whose equivalent width was large enough to produce a large P(LAE)/P(OII) ratio when the line was tested as if it were [OII]).
-{ \color{red} todo: show examples in appendix?}.  
-
+Any detections that were clearly not Ly$\alpha$ as generally evidenced by multiple emission lines that could not be consistent with a Ly$\alpha$ classification were removed. This comprised 77 detection that mostly consisted of resolved low-z galaxies where the HETDEX selected line was not OII (often an OIII or H$\beta$ line whose equivalent width was large enough to produce a large P(LAE)/P(OII) ratio when the line was tested as if it were OII). See Appendix \ref{sec:appendix-elixer} for examples.\\
+ 
 
 
 \subsection{Bad Neighbors and Superimposed Spectra}
-As with the step to remove detections with multiple nearby catalog neighbors in section \ref{sec:catalog_neighbors}, the associated imaging for each remaining candidate detection was examined for the presence of one or more nearby neighbors (inside 3") or for nearby large (extended) foreground objects that could be contributing flux (emission line or continuum) to the weighted 1D spectra. This examination removed an additional 64 candidates.
-{ \color{red} todo: show examples in appendix?}
+As with the step to remove detections with multiple nearby catalog neighbors in section \ref{sec:catalog_neighbors}, the associated imaging for each remaining candidate detection was examined for the presence of one or more nearby neighbors (inside 3") or for nearby large (extended) foreground objects that could be contributing flux (emission line or continuum) to the weighted 1D spectra. This examination removed an additional 64 candidates. See Appendix \ref{sec:appendix-elixer} for examples.\\
 
 
 \subsection{Miscellaneous Rejections}
-The final step in vetting the sample was a manual examination of the ELiXer detection report in which the 2D fiber cutouts, pixel flats, CCD region, 1D spectra fit, and full 1D spectra were reviewed for any disqualifying conditions (bad pixel flat, superimposed interference pattern, incompletely cleaned cosmic ray strikes, questionable line fit, etc). This last sweep removed 610 candidates, leaving a final data set of 270 "clean" detections { \color{red} todo: list here or in appendix? the detectID, name, RA, Dec}.  
+The final step in vetting the sample was a manual examination of the ELiXer detection report in which the 2D fiber cutouts, pixel flats, CCD region, 1D spectra fit, and full 1D spectra were reviewed for any disqualifying conditions (bad pixel flat, superimposed interference pattern, incompletely cleaned cosmic ray strikes, questionable line fit, etc). This last sweep removed 610 candidates, leaving a final data set of 270 "clean" detection. \\
 
 
 \subsection{Sky Fibers Selection}
 
-Lastly, in order to assert a positive detection above sky noise, it was necessary to identify and average over a large number of "blank" sky fibers. The initial sample of sky fibers was taken as the set of all fibers that shared a VIRUS Amplifier (for the same exposure) with one or more of the fibers included in a detection. That sample was then reduced to include only those fibers that did not exhibit obvious continuum or emission by removing from the set any fiber with one or more 2$\AA$ wide bins with flux exceeding $3.0\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ or one or more 500$\AA$ wide bins with mean flux outside $\pm 1.0 \times 10^{-17} erg\ s^{-1}\ cm^{-2}$. These selection criteria yielded 93090 sky fibers.  \\
+Lastly, in order to assert a positive detection above sky noise, it was necessary to identify and average over a large number of "blank" sky fibers. The initial sample of sky fibers was taken as the set of all fibers that shared a VIRUS Amplifier (for the same exposure) with one or more of the fibers included in a detection. That sample was then reduced to include only those fibers that did not exhibit obvious continuum or emission by removing from the set any fiber with one or more 2$\mbox{\AA}$ wide bins with flux exceeding $3.0\times 10^{-17} erg\ s^{-1}\ cm^{-2}$ or one or more 500$\mbox{\AA}$ wide bins with mean flux outside $\pm 1.0 \times 10^{-17} erg\ s^{-1}\ cm^{-2}$. These selection criteria yielded 93090 sky fibers.  \\
 
 \section{Analysis and Results} \label{sec:analysis}
 
 The primary objective of this work was to determine the feasibility of detecting Lyman Continuum photons in HETDEX data and, as such, the analysis at this stage, focuses only on detection with limited consideration given to characterization. Future work will enhance the analysis, correcting for IGM, CGM, and ISM radiative physics that are here expressly ignored.\\
 
-The input data for this work was the weighted and co-added spectra from the 270 accepted detections selected as described in section \ref{sec:selection} as well as the more than 90K individual, reduced non-detection (or 'sky') fibers. The HETDEX data reduction pipeline handled all the cleaning, rectification, throughput adjustment, DAR correction, and other steps necessary to combine the individual fibers over multiple exposures into a single 1D spectrum per detection { \color{red} todo: cite HETDEX paper}.
+The input data for this work was the weighted and co-added spectra from the 270 accepted detections selected as described in Section \ref{sec:selection} as well as the more than 90K individual, reduced non-detection (or "sky") fibers. The HETDEX data reduction pipeline handled all the cleaning, rectification, throughput adjustment, DAR correction, and other steps necessary to combine the individual fibers over multiple exposures into a single 1D spectrum per detection (again, see Section \ref{sec:reduction}).\\
 
 
 \subsection{Detection Stacking}
 
-Generally, aside from the primary (Ly$\alpha$) emission line, the SNR of astrophysical photons is far too low for individual detection, thus, stacking is employed to simultaneously boost the signal (which is additive) and suppress the noise (which is inherently random and assumed largely uncorrelated). Since the detections occurred at various redshifts between $\sim$ 3 and 3.5, the observed Ly$\alpha$ line is found at different wavelengths ($\sim$ 4860 to 5500 $\AA$) so to align each spectrum for stacking, they were first shifted to their own restframe. The individual redshifting produced wavelength bins of different widths, so the largest redshift (most narrow bin) was adopted as the grid onto which all rest-frame spectra were linearly interpolated. The spectra were then aligned on the Ly$\alpha$ bin and averaged in each bin. Because of their different redshifts but uniform observed frame wavelength range, wavelength bins in the outer blue and red ends of the include fewer data (as shown in figures \ref{fig:biweight_unbinned} and \ref{fig:biweight_binned}).
+Generally, aside from the primary (Ly$\alpha$) emission line, the SNR of astrophysical photons is far too low for individual detection, thus, stacking is employed to simultaneously boost the signal (which is additive) and suppress the noise (which is inherently random and assumed largely uncorrelated). Since the detections occurred at various redshifts between $\sim$ 3 and 3.5, the observed Ly$\alpha$ line is found at different wavelengths ($\sim$ 4860 to 5500 $\mbox{\AA}$) so to align each spectrum for stacking, they were first shifted to their own restframe. The individual redshifting produced wavelength bins of different widths, so the largest redshift (most narrow bin) was adopted as the grid onto which all rest-frame spectra were linearly interpolated. The spectra were then aligned on the Ly$\alpha$ bin and averaged in each bin. Because of their different redshifts but uniform observed frame wavelength range, wavelength bins in the outer blue and red ends of the include fewer data (as shown in figures \ref{fig:biweight_unbinned} and \ref{fig:biweight_binned}).\\
 
 \begin{figure}[H]
 \plotone{stacking.png}
+
 \caption{Cartoon of the stacking process\label{fig:stacking cartoon}}
 \end{figure}
 
-Although great care was taken to exclude data with spurious signals, it is very possible that some included spectra contain significant flux contributions from unintended sources. To further minimize the impact of any such data (assuming it to be outliers), averaging was performed via biweight functions (location and scale) { \color{red} todo: cite a biweight paper or embed eqns?}.
+\pagebreak
 
-To reduce jitter for a more readable plot, the biweight averages data were also binned (11 grids wide or $\sim 5 \AA$ restframe scale).
+Although great care was taken to exclude data with spurious signals, it is very possible that some included spectra contain significant flux contributions from unintended sources. To further minimize the impact of any such data (assuming it to be outliers), averaging was performed via biweight functions (location and scale).\\
 
-For both figures \ref{fig:biweight_unbinned} and \ref{fig:biweight_binned} an error estimate for the LAE spectra is presented as an averaged (mean) estimated population error (the mean of the biweight scale in each bin divided by the square root of the samples in that bin) along with the width of the wavelength bins. The error on the sky spectra was too small to be meaningfully displayed and no error on the \cite{Steidel} spectrum was provided.
+To reduce jitter for a more readable plot, the biweight averages data were also binned (11 grids wide or $\sim 5 \mbox{\AA}$ restframe scale).\\
+
+For both figures \ref{fig:biweight_unbinned} and \ref{fig:biweight_binned} an error estimate for the LAE spectra is presented as an averaged (mean) estimated population error (the mean of the biweight scale in each bin divided by the square root of the samples in that bin) along with the width of the wavelength bins. The error on the sky spectra was too small to be meaningfully displayed and no error on the \cite{Steidel} spectrum was provided.\\
 
 \subsection{Sky Stacking}
 
-Sky fibers were treated slightly differently. HETDEX is sky noise dominated and, since the sky is local, sky spectra were averaged (again, using biweight averaging) in the observed frame. Then, to align the wavelength bins, the averaged sky was then shifted and interpolated onto the same grid used for the detection spectra. This allowed for a simple, qualitative plot showing the averaged LAE spectra and the averaged sky spectra on the same scale.
+Sky fibers were treated slightly differently. HETDEX is sky noise dominated and, since the sky is local, sky spectra were averaged (again, using biweight averaging) in the observed frame. Then, to align the wavelength bins, the averaged sky was then shifted and interpolated onto the same grid used for the detection spectra. This allowed for a simple, qualitative plot showing the averaged LAE spectra and the averaged sky spectra on the same scale.\\
 
-For feature comparison, the IGM+CGM corrected and stacked LAE spectrum from Figure 14 of \cite{Steidel} was re-scaled and overplotted.  
-
-{ \color{red} todo: discussion, note the difference in SNR with Steidel and sample size ... ~ 4000 hrs vs 270x18 min)}
+For feature comparison, the IGM+CGM corrected and stacked LAE spectrum from Figure 14 of \cite{Steidel} was re-scaled and overplotted. \\
 
 
 \begin{figure}[H]
 \plotone{biweight_plot_default.png}
 \caption{Averaged LAE Spectra vs Sky. \label{fig:biweight_unbinned}\\
-Dark green curve shows wavelengths over which all 270 detections contribute. Light green shows wavelengths with fewer contributing spectra. Blue shows the averaged sky spectrum and black is the re-scaled IGM+CGM corrected spectra from \cite{Steidel}. Gold highlights the Lyman Continuum region. Also marked by red lines are the Lyman series.}
+Dark green curve shows wavelengths over which all 270 detections contribute. Light green shows wavelengths with fewer contributing spectra. Blue shows the averaged sky spectrum and black is the re-scaled IGM+CGM corrected spectra from \cite{Steidel}. Gold highlights the Lyman Continuum region. Also marked by red lines is the Lyman series.}
 \end{figure}
 
 \begin{figure}[H]
 \plotone{post_biweight_bin_default.png}
 \caption{Binned Averaged LAE Spectra vs Sky.\label{fig:biweight_binned} \\
-Same legend as in Figure \ref{fig:biweight_unbinned}. Also shown additional absorption features in black dotted lines.}
+Same legend as in Figure \ref{fig:biweight_unbinned}. Also shown additional absorption features as black dotted lines.}
 \end{figure}
 
 
-
+\begin{figure}[H]
+\plotone{post_biweight_bin_default_remove_skyline.png}
+\caption{Binned Averaged LAE Spectra with the sky line at 3545$\mbox{\AA}$ removed. There is no impact on the blue-end noise in the LyC region.\label{fig:biweight_binned_no_skyline}}
+\end{figure}
 
 
 \section{Discussion and Future Work} \label{sec:discussion}
 
-In the figures above, even with the relatively low total integration time (81 combined hours for this work vs 1275 combined hours for \cite{Steidel}) the Ly$\alpha$ emission is obvious and good recovery of the Lyman series and several other features is readily apparent, as is the continuum drop off approaching the Lyman break. There is an unexpected rise in flux blue-ward of the Lyman break, but it is unphysical and believed to be mostly driven by the increased noise on the blue end of the VIRUS detectors' spectra range {\color{red}: todo cite or someway to quantify this?} (more apparent in Figure \ref{fig:biweight_unbinned}) and relatively small sample size. To a lesser extent, there may also be some contribution to the flux from interlopers.\\
-
-Despite being clearly above the averaged sky, given the noise in the Lyman continuum region of the plot, it is not possible to claim at any significance a detection of Lyman Continuum from these 270 spectra. Still, the good recovery of the Lyman series and other spectra features where the noise is less suggests that with a larger sample (naively, a set of some 4000 detections would bring the total integration time on par with \cite{Steidel}), detection and characterization of Lyman Continuum should be possible. The HDR1 release should easily include more than $10^{5}$ LAEs, so this remains principally an effort in selecting for a clean sample. Significant additional effort needs to be made in improving the automated classification ({ \color{red} todo: expand on Bayesian ratio and machine learning effort?}) and the robustness of the data that feeds it ({ \color{red} todo: expand on additional imaging, making the imaging uniform to our aperture photometry, including spatial extents, etc}). It is also likely unavoidable that, at least for the foreseable future, every LAE candidate will need manual vetting through some Mechanical Turk mechanism. \\
-
-
-With a greatly expanded (clean) sample of LAEs, it will then be feasible to subdivide that sample by directly measurable or reliably inferred characteristics from the HETDEX spectra and archival multi-band photometry (such as redshift, Ly$\alpha$ equivalent width, star formation rates, stellar mass, dust extinction, etc) and investigate any correlations with the observed (ensemble) Lyman Continuum and seek a predictive relationship. If so, we would then be in position to constrain the escape of extreme ionizing photons from an array of galaxy types (by their individual characteristics) and obtain a better understanding of the drivers of Reionization.\\
+In the figures above, even with the relatively low total integration time (81 combined hours for this work vs 1275 combined hours for \cite{Steidel}) the Ly$\alpha$ emission is obvious and good recovery of the Lyman series and several other features is readily apparent, as is the continuum drop off approaching the Lyman break. There is an unexpected rise in flux blue-ward of the Lyman break, but it is unphysical and believed to be mostly driven by the increased noise on the blue end of the VIRUS detectors' spectra range (more apparent in Figure \ref{fig:biweight_unbinned}) and relatively small sample size. To a lesser extent, there may also be some unwanted contribution to the flux from small, faint, low-z interlopers that are not apparent in the imaging. However, incomplete sky subtraction particularly around the bright sky lines can be ruled out as a contributor. As seen in figure \ref{fig:biweight_binned_no_skyline}, explicitly excluding the the wavelength bins that include observed frame flux (from 3545 $\pm$ 10$\mbox{\AA}$) from the biweight averaging had no impact on the blue-end bump in the LyC.\\
 
 
 
 
 
-{ \color{red} todo: Ly series and other lines maybe show a small offset to the blue? possibly indicative of LyA velocity offset, but would want much more data to identify and quantify}
-
-{ \color{red} todo: discussion point, this is early data and classification is primitive ... HDR1 to inform and shape automated classification (machine learning, Bayesian ratio thresholds,etc) ... we do not know the probable fraction of contamination, etc; improvements to sky subtraction (can be wiping out true continuum), but is pretty good for local (to amp) sky}
+Despite being clearly above the averaged sky, given the noise in the Lyman continuum region of the plot, it is not possible to claim at any significance a detection of Lyman Continuum from these 270 spectra. Still, the good recovery of the Lyman series and other spectra features where the noise is less suggests that with a larger sample (naively, a set of some 4000 detections would bring the total integration time on par with \cite{Steidel}), detection and characterization of Lyman Continuum should be possible. The HDR1 release should easily include more than $10^{5}$ LAEs, so this remains principally an effort in selecting for a clean sample. Significant additional effort needs to be made in improving the automated classification and the robustness of the data that feeds it. It is also likely unavoidable that, at least for the foreseable future, every LAE candidate will need manual vetting through some Mechanical Turk mechanism. \\
 
 
-{ \color{red} todo: discussion point, LyA strength (EW) alone is not a good predictor of LyC as LyA is a complex function of physics and geometry there may even be an anti-correlation of LyC with LyA SN? If LyA strong could mean lots of neutral H and self shielding so little LyC escape ... but low sn, little hydrogen so little LyA produced but less shielding and relatively more LyC escapes?  So, for LyC detection might want lots of low sn and low EW LyA
-Right now that's hard since need to manually examine all }
+With a greatly expanded (clean) sample of LAEs, it will then be feasible to subdivide that sample by directly measurable or reliably inferred characteristics from the HETDEX spectra and archival multi-band photometry (such as redshift, Ly$\alpha$ equivalent width, SED fit star formation rates/histories, stellar mass, dust extinction, etc) and investigate any correlations with the observed (ensemble) Lyman Continuum and seek a predictive relationship. If so, we would then be in position to constrain the escape of extreme ionizing photons from an array of galaxy types (by their individual characteristics) and obtain a better understanding of the drivers of Reionization.\\
 
-{ \color{red}Potential contamination excluded (misidentification of emission line and faint continuum LOS interlopers), noise is the main limiting factor in our Lyman Continuum measurement. Future enhancements to the HETDEX pipeline should help address this issue by providing more readied access to larger LAE samples with both improved SNR and a lower viable SNR limit.}
 
 
 
@@ -330,7 +317,6 @@ Right now that's hard since need to manually examine all }
 %% command.
 \acknowledgments
 
-TBD acknowledgements
 
 \pagebreak
 \appendix
@@ -619,14 +605,12 @@ TBD acknowledgements
 \end{center}
 
 \newpage
-\section{Appendix - ELiXer Examples}
+\section{Appendix - ELiXer Examples}  \label{sec:appendix-elixer}
 
 \begin{figure}[H]
 \plotone{1000167702.pdf}
-\caption{ELiXer Report (NGC 4707). Example \label{fig:elixer_ngc_4707}}
-\end{figure}
+\caption{ELiXer Report (NGC 4707). Normal view. Within 3", no catalog counterparts are found. However, as seen in the next image, this is in the outer regions of a nearby galaxy.  \label{fig:elixer_ngc_4707}}
 
-\begin{figure}[H]
 \plotone{1000167702_wide.pdf}
 \caption{ELiXer Report (NGC 4707). Zoomed out view clearly shows the spatially extended galaxy. Note that there are no accepted detections within 11 arcmin of NGC 4707.\label{fig:elixer_ngc_4707_wide}}
 \end{figure}
@@ -634,10 +618,8 @@ TBD acknowledgements
 
 \begin{figure}[H]
 \plotone{1000395765.pdf}
-\caption{ELiXer Report Example of Non-LAE. The emission line of the detection is OIII (5007 $\AA$) but passed the P(LAE)/P(OII) test for the spectrum estimated continuum and the aperture estimated continuum. You can see the aperture is in the halo of the galaxy. \label{fig:elixer_not_lae}}
-\end{figure}
+\caption{ELiXer Report Example of Non-LAE. The emission line of the detection is OIII (5007$\mbox{\AA}$) but passed the P(LAE)/P(OII) test for the spectrum estimated continuum and the aperture estimated continuum. You can see the aperture is in the halo of the galaxy. \label{fig:elixer_not_lae}}
 
-\begin{figure}[H]
 \plotone{1000395765_wide.pdf}
 \caption{ELiXer Report Example of Non-LAE. Zoomed out view clearly shows the spatially extended galaxy that is reported (center) outside of 3" but that would otherwise have failed the P(LAE)/P(OII) test.\label{fig:elixer_not_lae_wide}}
 \end{figure}
@@ -646,17 +628,8 @@ TBD acknowledgements
 \bibitem[Bromm and Yoshida (2011)]{Bromm}
 Bromm, V. and Yoshida, N. "The First Galaxies", arXiv:1102.4638v1 (2011)
 
-\bibitem[Chisholm et al (2018)]{Chisholm}
-Chisholm J., et al "Accurately predicting the escape fraction of ionizing photons using rest-frame ultraviolet absorption lines", arXiv:1803.03655v2 (2018)
-
-\bibitem[Duncan and Conselice (2015)]{Duncan}
-Duncan, K. and Conselice, C. "Powering reionization: assessing the galaxy ionizing photon budget at z $<$ 10", arXiv:1505.01846v1 (2015)
-
 \bibitem[Finkelstein et al (2019)]{Finkelstein}
 Finkelstein S. et al "Conditions for Reionizing the Universe with a Low Galaxy Ionizing Photon Escape Fraction", arXiv:1902.02792v1 (2019)
-
-\bibitem[Gazagnes et al (2018)]{Gazagnes}
-Gazagnes, S. et al "Neutral gas properties of Lyman continuum emitting galaxies: Column densities and covering fractions from UV absorption lines", arXiv:1802.06378v2 (2018)
 
 \bibitem[Leung et al (2016)]{Leung}
 Leung, A. et al "Bayesian Redshift Classification of Emission-line Galaxies with Photometric Equivalent Widths", arXiv: 1510.07043v2 (2016)
